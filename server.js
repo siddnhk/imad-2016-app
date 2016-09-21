@@ -5,7 +5,7 @@ var path = require('path');
 var app = express();
 app.use(morgan('combined'));
 
-var sid1= {
+var sidOne= {
     title: 'Sid1',
     heading: 'Sid1',
     date: 'Sept21,2016',
@@ -23,7 +23,7 @@ function createTemplate(data){
      var heading = data.heading;
      var content = data.content;
      
-     var hatmlTemplate =`
+     var htmlTemplate =`
          <html>
             <head>
               <title>
@@ -58,7 +58,7 @@ function createTemplate(data){
 
 
 app.get('/sid1', function (req, res) {
-  res.send(createTemplate(sid1));
+  res.send(createTemplate(sidOne));
 });
 
 
