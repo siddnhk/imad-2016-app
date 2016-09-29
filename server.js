@@ -17,6 +17,15 @@ var sidOne= {
     <p> First Article Biatch! First Article Biatch! First Article Biatch! First Article Biatch! First Article Biatch! First Article Biatch! First Article Biatch! First Article Biatch! First Article Biatch! First Article Biatch! First Article Biatch! First Article Biatch! First Article Biatch! 
     </p>`
 };
+
+var sidtwo= {
+      title: 'Sid2', 
+      heading: 'Sid2', 
+      date: 'Sept29,2016', 
+      content: ` <p> First Article Biatch! First Article Biatch! First Article Biatch! First Article Biatch! First Article Biatch! First Article Biatch! First Article Biatch! First Article Biatch! First Article Biatch! First Article Biatch! First Article Biatch! First Article Biatch! First Article Biatch! </p> <p> First Article Biatch! First Article Biatch! First Article Biatch! First Article Biatch! First Article Biatch! First Article Biatch! First Article Biatch! First Article Biatch! First Article Biatch! First Article Biatch! First Article Biatch! First Article Biatch! First Article Biatch! </p> <p> First Article Biatch! First Article Biatch! First Article Biatch! First Article Biatch! First Article Biatch! First Article Biatch! First Article Biatch! First Article Biatch! First Article Biatch! First Article Biatch! First Article Biatch! First Article Biatch! First Article Biatch! </p>`
+      
+};
+
 function createTemplate(data){
      var title = data.title;
      var date = data.date; 
