@@ -110,8 +110,8 @@ app.get('/articles/:articleName', function (req, res) {
            res.status(404).send('Article not found');
         } else{
              res.send(JSON.stringify(result));
-           // var articleData = result.rows[0];
-            //res.send(createTemplate(articleData));
+            var articleData = result.rows[0];
+            res.send(createTemplate(articleData));
         }
     }
 
