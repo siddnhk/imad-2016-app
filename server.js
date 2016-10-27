@@ -14,26 +14,8 @@ var config = {
 var app = express();
 app.use(morgan('combined'));
 
-var sidOne= {
-    title: 'Sid1',
-    heading: 'Sid1',
-    date: 'Sept21,2016',
-    content: `
-    <p> First Article Biatch! First Article Biatch! First Article Biatch! First Article Biatch! First Article Biatch! First Article Biatch! First Article Biatch! First Article Biatch! First Article Biatch! First Article Biatch! First Article Biatch! First Article Biatch! First Article Biatch! 
-    </p>
-    <p> First Article Biatch! First Article Biatch! First Article Biatch! First Article Biatch! First Article Biatch! First Article Biatch! First Article Biatch! First Article Biatch! First Article Biatch! First Article Biatch! First Article Biatch! First Article Biatch! First Article Biatch! 
-    </p>
-    <p> First Article Biatch! First Article Biatch! First Article Biatch! First Article Biatch! First Article Biatch! First Article Biatch! First Article Biatch! First Article Biatch! First Article Biatch! First Article Biatch! First Article Biatch! First Article Biatch! First Article Biatch! 
-    </p>`
-};
 
-var sidtwo= {
-      title: 'Sid2', 
-      heading: 'Sid2', 
-      date: 'Sept29,2016', 
-      content: ` <p> First Article Biatch! First Article Biatch! First Article Biatch! First Article Biatch! First Article Biatch! First Article Biatch! First Article Biatch! First Article Biatch! First Article Biatch! First Article Biatch! First Article Biatch! First Article Biatch! First Article Biatch! </p> <p> First Article Biatch! First Article Biatch! First Article Biatch! First Article Biatch! First Article Biatch! First Article Biatch! First Article Biatch! First Article Biatch! First Article Biatch! First Article Biatch! First Article Biatch! First Article Biatch! First Article Biatch! </p> <p> First Article Biatch! First Article Biatch! First Article Biatch! First Article Biatch! First Article Biatch! First Article Biatch! First Article Biatch! First Article Biatch! First Article Biatch! First Article Biatch! First Article Biatch! First Article Biatch! First Article Biatch! </p>`
-      
-};
+
 
 function createTemplate(data){
      var title = data.title;
@@ -119,15 +101,6 @@ app.get('/articles/:articleName', function (req, res) {
   }); 
 
   
-});
-
-app.get('/sid1', function (req, res) {
-  res.send(createTemplate(sidOne));
-});
-
-
-app.get('/sid2', function (req, res) { 
-    res.send(createTemplate(sidtwo)); 
 });
 
 
