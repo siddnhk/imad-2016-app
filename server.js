@@ -55,7 +55,20 @@ function createTemplate(data){
 }
 
 var pool = new Pool(config);
+app.get('/test-db', function (req, res) {
+  
+  pool.query('SELECT * FROM articles', function(err,result){
+    if(err){
+       res.status(500).send(err.toString());
+    }
+    else{
+       
+       res.send(JSON.stringify(result));
+   }
+  
+  });
 
+});
 
 
 
