@@ -94,7 +94,7 @@ app.get('/submit-name', function (req, res) {
 var comments = []; 
 app.get('/post-comments', function (req, res) {
     
- // var articleId = document.getElementById('article_id');  
+ 
   var comment = req.query.comment;
   comments.push(comment);
   res.send(JSON.stringify(comments));
