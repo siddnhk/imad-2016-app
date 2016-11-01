@@ -96,6 +96,7 @@ app.get('/post-comments', function (req, res) {
     
  
   var comment = req.query.comment;
+  var articleId = req.query.index;
   comments.push(comment);
   res.send(JSON.stringify(comments));
   
