@@ -23,6 +23,7 @@ post.onclick = function(){
                 names = JSON.parse(names);
                 var list = '';
                 for(var i=0; i< names.length; i++){
+                    pool.query('INSERT INTO "comments" ("article id", "time", "content") VALUES ($1, now(), $2);');
                     list += '<li>' + names[i] + '</li>';
                 }
                 var ul = document.getElementById('commentlist');
