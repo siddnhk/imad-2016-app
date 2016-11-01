@@ -30,7 +30,7 @@ function createTemplate(data){
             <head>
               <title>
                   ${title} 
-                  <input type="int" id="article_id" value= ${index}>
+                 <input type="int" id="article_id" value= ${index}>
               </title>
               <meta name= "viewport" content= "width=device-width, initial-scale= 1" />
               <link href="/ui/style.css" rel="stylesheet" />
