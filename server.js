@@ -29,7 +29,8 @@ function createTemplate(data){
          <html>
             <head>
               <title>
-                  ${title}
+                  ${title} 
+                  <input type="int" id="article_id" value= ${index}>
               </title>
               <meta name= "viewport" content= "width=device-width, initial-scale= 1" />
               <link href="/ui/style.css" rel="stylesheet" />
@@ -93,7 +94,7 @@ app.get('/submit-name', function (req, res) {
 var comments = []; 
 app.get('/post-comments', function (req, res) {
     
-   
+  var articleId = document.getElementById('article_id');  
   var comment = req.query.comment;
   comments.push(comment);
   res.send(JSON.stringify(comments));
