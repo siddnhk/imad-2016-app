@@ -48,6 +48,14 @@ function createTemplate(data){
                      ${content}
                   </div>
                </div>
+               <div class="footer">
+                 <input type="text" id="comments" placeholder="comments">
+                 <input type="post" id="post_btn" value="Post">
+                 <ul id=commentlist>
+                 </ul>
+               </div>
+               <script type="text/javascript" src="/ui/main.js">
+               </script>
             </body>
         </html>    
         `;
