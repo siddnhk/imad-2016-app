@@ -18,12 +18,13 @@ post.onclick = function(){
     request.onreadystatechange = function(){
         if(request.readyState === XMLHttpRequest.DONE){
             if(request.status === 200){
-                
+                var id=document.getElementById('articleId');
+                var index=id.value;
                 var names = request.responseText;
                 names = JSON.parse(names);
                 var list = '';
                 for(var i=0; i< names.length; i++){
-                    pool.query('INSERT INTO "comments" ("article id", "time", "content") VALUES ($1, now(), $2);');
+                    pool.query('INSERT INTO "comments" ("article id", "time", "content") VALUES ($1, now(), $2);' [id],[names[i]] );
                     list += '<li>' + names[i] + '</li>';
                 }
                 var ul = document.getElementById('commentlist');
