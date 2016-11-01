@@ -88,6 +88,13 @@ app.get('/submit-name', function (req, res) {
   res.send(JSON.stringify(names));
 });
 
+ 
+var comments = []; 
+app.get('/post-comments', function (req, res) {
+  var name = req.query.name;
+  comments.push(name);
+  res.send(JSON.stringify(comments));
+});
 
 
 app.get('/articles/:articleName', function (req, res) {
