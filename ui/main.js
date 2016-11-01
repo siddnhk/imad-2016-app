@@ -1,13 +1,4 @@
-var Pool = require('pg').Pool;
 
-var config = {
- host: 'db.imad.hasura-app.io',
- user: 'siddnhk',
- password: process.env.DB_PASSWORD,
- port: '5432',
- database: 'siddnhk',
-};
-var pool = new Pool(config);
 
 var post = document.getElementById('post_btn');
 
@@ -24,8 +15,8 @@ post.onclick = function(){
                 names = JSON.parse(names);
                 var list = '';
                 for(var i=0; i< names.length; i++){
-                    pool.query('INSERT INTO "comments" ("article id", "time", "content") VALUES ($1, now(), $2);' [id],[names[i]] );
-                    list += '<li>' + names[i] + '</li>';
+                    
+                    list += '<li>' + names[i]+''+id+'</li>';
                 }
                 var ul = document.getElementById('commentlist');
                 ul.innerHTML = list;
