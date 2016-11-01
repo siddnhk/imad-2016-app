@@ -1,3 +1,14 @@
+var Pool = require('pg').Pool;
+
+var config = {
+ host: 'db.imad.hasura-app.io',
+ user: 'siddnhk',
+ password: process.env.DB_PASSWORD,
+ port: '5432',
+ database: 'siddnhk',
+};
+var pool = new Pool(config);
+
 var post = document.getElementById('post_btn');
 
 post.onclick = function(){
