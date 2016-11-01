@@ -23,6 +23,7 @@ function createTemplate(data){
      var date = data.date; 
      var heading = data.heading;
      var content = data.content;
+     var index = data.index;
      
      var htmlTemplate =`
          <html>
@@ -81,8 +82,7 @@ app.get('/test-db', function (req, res) {
 
 
 
- 
-var names = []; 
+ var names = []; 
 app.get('/submit-name', function (req, res) {
   var name = req.query.name;
   names.push(name);
@@ -92,9 +92,15 @@ app.get('/submit-name', function (req, res) {
  
 var comments = []; 
 app.get('/post-comments', function (req, res) {
+    
+   
   var comment = req.query.comment;
   comments.push(comment);
   res.send(JSON.stringify(comments));
+  
+  // pool.query(' INSERT INTO "comments" ("article id", "time", "content") VALUES ( pool.query("$1, now(), $2)');
+  
+  
 });
 
 
