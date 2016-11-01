@@ -99,7 +99,7 @@ app.get('/post-comments', function (req, res) {
   comments.push(comment);
   res.send(JSON.stringify(comments));
   
-   pool.query(' INSERT INTO "comments" ("article id", "time", "content") VALUES ( pool.query("$1, now(), $2)',articleId,comment);
+  // pool.query(' INSERT INTO "comments" ("article id", "time", "content") VALUES ( pool.query("$1, now(), $2)',articleId,comment);
   
   
 });
