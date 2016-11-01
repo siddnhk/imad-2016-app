@@ -50,7 +50,7 @@ function createTemplate(data){
                </div>
                <div class="footer">
                  <input type="text" id="comments" placeholder="comments">
-                 <input type="post" id="post_btn" value="Post">
+                 <input type="submit" id="post_btn" value="Post">
                  <ul id=commentlist>
                  </ul>
                </div>
