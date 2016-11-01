@@ -21,11 +21,10 @@ post.onclick = function(){
      
     
     };
-   //var articleId = document.getElementById('article_id');  
+   
    var commentInput = document.getElementById('comments');
    var comment = commentInput.value;
-   //var index = commentInput.value;
-   request.open('GET', 'http://siddnhk.imad.hasura-app.io/post-comments?comment=' + comment, true);
+    request.open('GET', 'http://siddnhk.imad.hasura-app.io/post-comments?comment=' + comment, true);
    request.send(null);
    
     
