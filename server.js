@@ -15,9 +15,6 @@ var app = express();
 app.use(morgan('combined'));
 
 
-
-
-
 function createTemplate(data){
      var title = data.title;
      var date = data.date; 
@@ -66,6 +63,22 @@ function createTemplate(data){
 }
 
 var pool = new Pool(config);
+
+
+function hash(input,salt){
+    
+   var hashed = crypto.pbkdf2Sync(input,salt,10000,'sha512');
+   return hashed.toString('hex');
+   
+    
+}
+app.get('/hash/:input', function (req, res) {
+      
+   var hashedString = hash(req.params.input,'this-is-a-random-string');
+   res.send(hashedString);
+});
+
+
 app.get('/test-db', function (req, res) {
   
   pool.query('SELECT * FROM articles', function(err,result){
