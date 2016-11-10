@@ -3,6 +3,8 @@ var morgan = require('morgan');
 var path = require('path');
 var Pool = require('pg').Pool;
 var crypto= require('crypto');
+var bodyParser = require('body-parser');
+var session = require('express-session');
 
 var config = {
  host: 'db.imad.hasura-app.io',
@@ -14,54 +16,57 @@ var config = {
 
 var app = express();
 app.use(morgan('combined'));
+app.use(bodyParser.json());
+app.use(session({
+    secret: 'someRandomSecretValue',
+    cookie: { maxAge: 1000 * 60 * 60 * 24 * 30}
+}));
 
-
-function createTemplate(data){
-     var title = data.title;
-     var date = data.date; 
-     var heading = data.heading;
-     var content = data.content;
-     var index = data.Index;
-     
-     var htmlTemplate =`
-         <html>
-            <head>
-              <title>
-                  ${title} 
-                 <input type="int" id="article_id" value= ${index}>
-              </title>
-              <meta name= "viewport" content= "width=device-width, initial-scale= 1" />
-              <link href="/ui/style.css" rel="stylesheet" />
-            </head>
-            <body>
-               <div class="container">
-                  <div>
-                     <a href="/">Home</a>
-                  </div>
-                  <hr/>
-                  <h3>
-                     ${heading}, ${index}
-                  </h3>
-                  <div>
-                     ${date.toDateString()}
-                  </div>
-                  <div>
-                     ${content}
-                  </div>
-               </div>
-               <div class="footer">
-                 <input type="text" id="comments" placeholder="comments">
-                 <input type="submit" id="post_btn" value="Post">
-                 <ul id=commentlist>
-                 </ul>
-               </div>
-               <script type="text/javascript" src="/ui/main.js">
-               </script>
-            </body>
-        </html>    
-        `;
-     return htmlTemplate;
+function createTemplate (data) {
+    var title = data.title;
+    var date = data.date;
+    var heading = data.heading;
+    var content = data.content;
+    
+    var htmlTemplate = `
+    <html>
+      <head>
+          <title>
+              ${title}
+          </title>
+          <meta name="viewport" content="width=device-width, initial-scale=1" />
+          <link href="/ui/style.css" rel="stylesheet" />
+      </head> 
+      <body>
+          <div class="container">
+              <div>
+                  <a href="/">Home</a>
+              </div>
+              <hr/>
+              <h3>
+                  ${heading}
+              </h3>
+              <div>
+                  ${date.toDateString()}
+              </div>
+              <div>
+                ${content}
+              </div>
+              <hr/>
+              <h4>Comments</h4>
+              <div id="comment_form">
+              </div>
+              <div id="comments">
+                <center>Loading comments...</center>
+              </div>
+          </div>
+          <script type="text/javascript" src="/ui/article.js"></script>
+      </body>
+    </html>
+    `;
+    return htmlTemplate;
 }
+
 
 var pool = new Pool(config);
 
