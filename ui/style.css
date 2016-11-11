@@ -9,6 +9,16 @@ body {
     text-align: center;
 }
 
+.login {
+    max-width: 800px;
+    margin-left: 500px ;
+    color: #4a4a4a;
+    font-family: sans-sarif;
+    padding-top: 60px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
 .text-big {
     font-size: 300%;
 }
