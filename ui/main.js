@@ -10,6 +10,7 @@ function loadLoginForm () {
         <input type="submit" id="login_btn" value="Login" />
         <input type="submit" id="register_btn" value="Sign Up" />
         <h4>Or</h4>
+        <div class="g-signin2" data-onsuccess="onSignIn"></div>
         `;
     document.getElementById('login_area').innerHTML = loginHtml;
     
