@@ -11,6 +11,7 @@ function loadLoginForm () {
         <input type="submit" id="register_btn" value="Sign Up" />
         <h4>Or</h4>
         <div class="g-signin2" data-onsuccess="onSignIn"></div>
+        <script src="https://apis.google.com/js/platform.js" async defer></script>
         `;
     document.getElementById('login_area').innerHTML = loginHtml;
     
@@ -37,6 +38,10 @@ function loadLoginForm () {
               }
               loadLogin();
           }  
+          
+          function onSuccess(googleUser) {
+          console.log('Signed in as: ' + googleUser.getBasicProfile().getName());
+           }
           // Not done yet
         };
         
