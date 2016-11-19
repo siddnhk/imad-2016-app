@@ -67,12 +67,9 @@ function createTemplate (data) {
     return htmlTemplate;
 }
 
-
-
 app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
-
 
 function hash(input,salt){
     
@@ -81,16 +78,14 @@ function hash(input,salt){
    
     
 }
+
 app.get('/hash/:input', function (req, res) {
       
    var hashedString = hash(req.params.input,'this-is-a-random-string');
    res.send(hashedString);
 });
 
-
-
 var pool = new Pool(config);
-
 
 app.post('/create-user', function (req, res) {
    // username, password
@@ -162,8 +157,6 @@ app.get('/logout', function (req, res) {
    res.send('<html><body>Logged out!<br/><br/><a href="/">Back to home</a></body></html>');
 });
 
-
-
 app.get('/get-articles', function (req, res) {
    // make a select request
    // return a response with the results
@@ -176,7 +169,6 @@ app.get('/get-articles', function (req, res) {
    });
 });
 
-
 app.get('/get-comments/:articleName', function (req, res) {
    // make a select request
    // return a response with the results
@@ -188,11 +180,6 @@ app.get('/get-comments/:articleName', function (req, res) {
       }
    });
 });
-
-
-
-
-
 
 app.get('/test-db', function (req, res) {
   
@@ -208,7 +195,6 @@ app.get('/test-db', function (req, res) {
   });
 
 });
-
 
 app.post('/submit-comment/:articleName', function (req, res) {
    // Check if the user is logged in
@@ -261,15 +247,9 @@ app.get('/articles/:articleName', function (req, res) {
 
 });
 
-
-
-
-
-
 app.get('/ui/:fileName', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', req.params.fileName));
 });
-
 
 
 var port = 8080; // Use 8080 for local development because you might already have apache running on 80
