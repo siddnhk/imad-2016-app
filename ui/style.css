@@ -16,8 +16,8 @@ body {
 }
 
 #logo {
-     width: 250px;
-     background-color: #111;
+     width: 500px;
+     background-color: #272;
      padding: 0;
      margin: 0;
      display: block;
@@ -25,10 +25,10 @@ body {
 }
 
 #login_area {
-     width: 750px;
-     background-color: #777;
+     width: 500px;
+     background-color: #272;
      display: block;
-     float: left;
+     float: right;
      
 }
 
