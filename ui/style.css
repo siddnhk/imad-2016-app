@@ -29,7 +29,7 @@ body {
      background-color: #272;
      display: block;
      margin: 500px;
-     position: fixed;
+     float: right;
      
 }
 
