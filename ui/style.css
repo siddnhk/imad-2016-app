@@ -8,14 +8,13 @@ body {
     text-align: center;
 }
 
-#navbar {
+.navbar {
 	position: fixed;
 	top:10px;
 	left:50%;
 	margin-left:-254px;
 }
-
-#header {
+.header {
 	position: relative;
 	top: -10px;
 	background-color: #3c4543;
