@@ -8,13 +8,6 @@ body {
     text-align: center;
 }
 
-.navbar {
-	position: fixed;
-    padding-top: 10px;
-    padding-left: 20px;
-    padding-right: 10px;
-
-}
 
 .login {
     max-width: 800px;
