@@ -11,13 +11,12 @@ body {
 
 
 #login_area {
-    max-width: 800px;
     margin: 500px;
     color: #4a4a4a;
     font-family: sans-sarif;
-    padding-top: 60px;
+    padding-top: 5px;
     padding-left: 20px;
-    padding-right: 20px;
+    padding-right: 10px;
      
 }
 
