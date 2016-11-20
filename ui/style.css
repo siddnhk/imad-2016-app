@@ -16,7 +16,7 @@ body {
 }
 
 #logo {
-     width: 500px;
+     width: 700px;
      background-color: #272;
      padding: 0;
      margin: 0;
@@ -28,7 +28,8 @@ body {
      width: 500px;
      background-color: #272;
      display: block;
-     float: right;
+     margin: 500px;
+     position: fixed;
      
 }
 
