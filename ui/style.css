@@ -8,28 +8,16 @@ body {
     text-align: center;
 }
 
-#header {
-     width: 1005px;
-     margin: 0 auto;
-     padding: 0;
-     overflow: auto;
-}
 
-#logo {
-     width: 700px;
-     background-color: #272;
-     padding: 0;
-     margin: 0;
-     display: block;
-
-}
 
 #login_area {
-     width: 500px;
-     background-color: #272;
-     display: block;
-     margin: 500px;
-     float: right;
+    max-width: 800px;
+    margin: 500px;
+    color: #4a4a4a;
+    font-family: sans-sarif;
+    padding-top: 60px;
+    padding-left: 20px;
+    padding-right: 20px;
      
 }
 
